@@ -103,7 +103,7 @@
                                 <p class="text-center">or sign in with</p>
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <a href="https://accounts.google.com/o/oauth2/v2/auth?scope=email%20profile&state=state_parameter_passthrough_value&access_type=offline&response_type=code&include_granted_scopes=true&redirect_uri=http://localhost:8080/XHobbeWebApp/LoginGoogleHandler&client_id=968629766334-ib9g601qejl32aqv0sep9dnvklnskt9d.apps.googleusercontent.com"
+                                        <a href="https://accounts.google.com/o/oauth2/v2/auth?scope=email%20profile&state=state_parameter_passthrough_value&access_type=offline&response_type=code&include_granted_scopes=true&redirect_uri=https://xhobbe.onrender.com/LoginGoogleHandler&client_id=968629766334-ib9g601qejl32aqv0sep9dnvklnskt9d.apps.googleusercontent.com"
                                            class="btn btn-login btn-g">
                                             <i class="icon-google"></i>
                                             Login With Google
@@ -180,7 +180,7 @@
                                 <p class="text-center">or sign in with</p>
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <a href="https://accounts.google.com/o/oauth2/v2/auth?scope=email%20profile&state=state_parameter_passthrough_value&access_type=offline&response_type=code&include_granted_scopes=true&redirect_uri=http://localhost:8080/XHobbeWebApp/LoginGoogleHandler&client_id=968629766334-ib9g601qejl32aqv0sep9dnvklnskt9d.apps.googleusercontent.com"
+                                        <a href="https://accounts.google.com/o/oauth2/v2/auth?scope=email%20profile&state=state_parameter_passthrough_value&access_type=offline&response_type=code&include_granted_scopes=true&redirect_uri=https://xhobbe.onrender.com/LoginGoogleHandler&client_id=968629766334-ib9g601qejl32aqv0sep9dnvklnskt9d.apps.googleusercontent.com"
                                            class="btn btn-login btn-g">
                                             <i class="icon-google"></i>
                                             Login With Google
