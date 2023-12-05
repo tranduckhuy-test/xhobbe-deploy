@@ -17,7 +17,7 @@
     <nav aria-label="breadcrumb" class="breadcrumb-nav mb-2">
         <div class="container">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/XHobbeWebApp/">Home</a></li>
+                <li class="breadcrumb-item"><a href="./home">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Blog</li>
             </ol>
         </div><!-- End .container -->

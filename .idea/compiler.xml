@@ -12,7 +12,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="XHobbeWebApp" options="-endorseddirs &quot;E:\FPTU\Semester 4 - Fall23\PRJ301\Project\XHobbeWebApp\target/endorsed&quot;" />
+      <module name="XHobbeWebApp" options="-endorseddirs &quot;E:\FPTU\Semester 4 - Fall23\PRJ301\Project\xhobbe-deploy\target/endorsed&quot;" />
     </option>
   </component>
 </project>

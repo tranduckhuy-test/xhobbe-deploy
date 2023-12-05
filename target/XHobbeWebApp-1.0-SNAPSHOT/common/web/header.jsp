@@ -177,7 +177,7 @@
                         <nav class="main-nav">
                             <ul class="menu sf-arrows">
                                 <li class="${category == null ? 'active' : ''} ">
-                                    <a href="/XHobbeWebApp/">Home</a>
+                                    <a href="./home">Home</a>
                                 </li>
                                 <li class="${category eq 'all' ? 'active' : ''} ">
                                     <a href="./product?action=list&category=all">Shop</a>
