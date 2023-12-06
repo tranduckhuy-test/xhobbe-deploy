@@ -18,7 +18,6 @@ import javax.mail.MessagingException;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import org.apache.commons.codec.binary.StringUtils;
 
 /**
  *
@@ -81,7 +80,7 @@ public class SendEmailUtils {
     }
 
     public static void sendActiveMessage(String to, String title, String content) {
-        String activationLink = "http://localhost:8080/XHobbeWebApp/login?action=active&email=" + to + "&token=" + content;
+        String activationLink = "https://xhobbe.onrender.com/login?action=active&email=" + to + "&token=" + content;
         String message = "<!DOCTYPE html>\n"
                 + "<html lang=\"en\">\n"
                 + "<head>\n"
