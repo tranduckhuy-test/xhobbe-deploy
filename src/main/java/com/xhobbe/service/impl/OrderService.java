@@ -34,7 +34,7 @@ public class OrderService implements IOrderService {
         
         order = orderDAO.findOne(id);
         
-        return order != null ? order : null;
+        return order;
     }
 
     @Override
@@ -64,7 +64,7 @@ public class OrderService implements IOrderService {
             results.add(OrderUtils.getOrderElement(order));
         }
 
-        return !results.isEmpty() ? String.join("", results) : "";
+        return String.join("", results);
     }
     
     @Override
@@ -111,7 +111,7 @@ public class OrderService implements IOrderService {
     @Override
     public List<Double> getTotalIncomeByMonth(int month) {
         
-        List<Double> incomes = new ArrayList();
+        List<Double> incomes = new ArrayList<>();
         if (month != 0) {
             incomes.add(orderDAO.getTotalIncomeByMonth(month));
         } else {
@@ -140,7 +140,7 @@ public class OrderService implements IOrderService {
             results.add(OrderUtils.getOrderElementWeb(order));
         }
 
-        return !results.isEmpty() ? String.join("", results) : "";
+        return String.join("", results);
 
     }
 
@@ -157,7 +157,7 @@ public class OrderService implements IOrderService {
             results.add(OrderUtils.getOrderElement(order));
         }
 
-        return !results.isEmpty() ? String.join("", results) : "";
+        return String.join("", results);
     }
 
     @Override

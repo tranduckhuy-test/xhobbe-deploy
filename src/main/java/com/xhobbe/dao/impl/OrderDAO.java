@@ -21,13 +21,10 @@ public class OrderDAO extends AbstractDAO<Order> implements IOrderDAO {
 
     @Override
     public Long add(Order order) {
-        StringBuilder sql = new StringBuilder("INSERT INTO \"order\" ");
-        sql.append("(\"userId\", \"deliveryAddress\", \"total\") ");
-        sql.append("VALUES (?, ?, ?)");
+        String sql = "INSERT INTO \"order\" " + "(\"userId\", \"deliveryAddress\", \"total\") " +
+                "VALUES (?, ?, ?)";
 
-        long id = super.insert(sql.toString(), order.getUserId(), order.getAddress(),order.getTotal());
-
-        return id;
+        return super.insert(sql, order.getUserId(), order.getAddress(),order.getTotal());
     }
 
     // query for Product to get additional imageURL
@@ -37,7 +34,7 @@ public class OrderDAO extends AbstractDAO<Order> implements IOrderDAO {
         try ( Connection conn = super.getConnection();  PreparedStatement ps = conn.prepareStatement(sql)) {
             super.setParameter(ps, parameters);
 
-            try ( ResultSet rs = ps.executeQuery();) {
+            try ( ResultSet rs = ps.executeQuery()) {
                 while (rs.next()) {
                     Order order = rowMapper.mapRow(rs);
                     results.add(order);
@@ -65,9 +62,7 @@ public class OrderDAO extends AbstractDAO<Order> implements IOrderDAO {
         sql.append("JOIN \"user\" AS u ON o.\"userId\" = u.\"userId\" AND (u.\"email\" = ? OR u.\"phoneNumber\" = ?)");
         sql.append("JOIN \"orderStatusCheck\" AS s ON o.\"orderStatusId\" = s.\"orderStatusId\"");
 
-        List<Order> resutls = this.queryOrder(sql.toString(), new OrderMapper(), searchValue, searchValue);
-
-        return resutls;
+        return this.queryOrder(sql.toString(), new OrderMapper(), searchValue, searchValue);
     }
 
     @Override
@@ -161,14 +156,14 @@ public class OrderDAO extends AbstractDAO<Order> implements IOrderDAO {
 
     @Override
     public double getTotalIncomeByMonth(int month) {
-        StringBuilder sql = new StringBuilder("SELECT ROUND(SUM(\"total\")::numeric, 2) FROM \"order\" ");
+        StringBuilder sql = new StringBuilder("SELECT ROUND(SUM(\"total\")::numeric, 2) FROM \"order\" WHERE \"orderStatusId\" = 3 ");
         
         // month = -1 - get all order
         if (month == -1) {
             return countDouble(sql.toString());
         }
         
-        sql.append(" WHERE EXTRACT(YEAR FROM \"orderDate\") = EXTRACT(YEAR FROM CURRENT_DATE) ");
+        sql.append("AND EXTRACT(YEAR FROM \"orderDate\") = EXTRACT(YEAR FROM CURRENT_DATE) ");
         
         if (month != 0) {
             sql.append("AND EXTRACT(MONTH FROM \"orderDate\") = ").append(month);
@@ -200,7 +195,7 @@ public class OrderDAO extends AbstractDAO<Order> implements IOrderDAO {
     
     public static void main(String[] args) {
         OrderDAO o = new OrderDAO();
-        System.out.println(o.findOne(1));
+        System.out.println(o.getTotalIncomeByMonth(0));
     }
     
 }
